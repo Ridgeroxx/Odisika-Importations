@@ -1,0 +1,289 @@
+/* 🌟 General Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #f5f5f5;
+    color: #333;
+    text-align: center;
+    background-attachment: fixed;
+}
+
+/* 🎯 Sections */
+section {
+    padding: 60px 20px;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* 🚀 Features */
+.features-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.feature {
+    width: 300px;
+    text-align: center;
+}
+
+.feature img {
+    width: 60px;
+}
+
+/* 📚 Courses */
+.course-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.course-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 250px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.course-card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* 💬 Testimonials */
+.testimonial-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.testimonial {
+    width: 250px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 🚀 Call to Action */
+.cta {
+    background: #007bff;
+    color: white;
+    padding: 40px 20px;
+}
+
+.cta .btn {
+    background: white;
+    color: #007bff;
+}
+
+/* ⚡ Footer */
+.footer {
+    background: #333;
+    color: white;
+    padding: 20px;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+/* 🎯 Hero Section */
+.hero {
+    background: url('../assets/images/odi.jpg') center/cover no-repeat;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    background-attachment: fixed;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+/* 🌟 Profile Dropdown Styling */
+.profile-menu {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-menu a {
+    text-decoration: none;
+    color: white;
+}
+
+.profile-menu .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: rgba(0, 0, 0, 0.9);
+    list-style: none;
+    padding: 10px;
+    border-radius: 5px;
+    width: 200px;
+    text-align: left;
+    z-index: 1000;
+}
+
+.profile-menu .dropdown li {
+    padding: 8px;
+}
+
+.profile-menu .dropdown li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+.profile-menu .dropdown li a:hover {
+    background: #007bff;
+    border-radius: 5px;
+}
+
+/* Show Dropdown on Click */
+.profile-menu .dropdown.show {
+    display: block;
+}
+
+#authNav {
+    display: block !important; /* 🔥 Ensure it shows up */
+}
+
+/* ✅ Restore Custom Navbar Styling */
+.navbar {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+
+.navbar .nav-links {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+    gap: 15px !important;
+}
+
+.navbar .nav-links li {
+    display: inline !important;
+}
+
+.navbar .nav-links a {
+    color: white !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
+    padding: 10px 15px !important;
+}
+
+.navbar .nav-links a:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    border-radius: 5px !important;
+}
+
+/* ✅ Ensure Navbar is Always on Top */
+.navbar-fixed {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 1050 !important;
+}
+
+/* ✅ Fix Bootstrap Button Issues */
+button, .btn {
+    font-size: 16px !important;
+    font-weight: bold !important;
+    border-radius: 5px !important;
+}
+
+/* ✅ Fix Bootstrap Sidebar Width */
+.offcanvas {
+    width: 280px !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* 🔥 Modal Styling */
+.modal { display: none; position: fixed; z-index: 1000; left: 50%; top: 50%;
+    transform: translate(-50%, -50%); background: white; padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); text-align: center; }
+  .modal-content { padding: 20px; }
+  .close-btn { cursor: pointer; font-size: 20px; float: right; }
+  
+  /* 🔄 Hidden by Default */
+#loadingScreen {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 9999;
+}
+
+/* 🔄 Loading Spinner */
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-top: 5px solid #fff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+  

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📚 Course Dashboard</title>
+    <link rel="stylesheet" href="styles/course-dashboard.css">
+</head>
+<body>
+    <!-- 🚀 Navbar -->
+    <nav class="navbar">
+        <div class="logo">Odisika Importation</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="enroll.html">Enroll</a></li>
+            <li><a href="access-course.html">Access Course</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+    </nav>
+
+    <!-- 🎥 Course Container -->
+    <div class="course-container">
+        <!-- 📜 Sidebar for Lessons -->
+        <div class="course-sidebar">
+            <h3>📖 Lessons</h3>
+            <ul id="lessonList">
+                <li data-video="assets/videos/Black Sherif - Kilos Milos (Official Visualizer).mkv">📌 Introduction</li>
+                <li data-video="assets/videos/Stonebwoy - OVERLORD (Official Video).Mp4">📌 Lesson 2</li>
+                <li data-video="videos/Olivetheboy - ASYLUM (Official Visualizer).mkv">📌 Advanced Techniques</li>
+            </ul>
+        </div>
+
+        <!-- 🎬 Main Course Content -->
+        <div class="course-content">
+            <h2 id="courseTitle">📚 Welcome to Your Course</h2>
+            <video id="courseVideo" controls>
+                <source src="assets/videos/Black Sherif - Kilos Milos (Official Visualizer).mkv" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+            <div class="lecture-content">
+                <h3>📖 Lecture Notes</h3>
+                <p id="lectureText">Click on a lesson to view its content.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/course-dashboard.js"></script>
+</body>
+</html>

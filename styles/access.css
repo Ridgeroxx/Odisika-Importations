@@ -1,0 +1,45 @@
+/* 🌟 Access Page Styling */
+.access-container {
+    max-width: 500px;
+    margin: 120px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    color: white;
+}
+
+h2 {
+    font-size: 24px;
+    color: #00b894;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+button {
+    padding: 10px 15px;
+    background: #00b894;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #008f6e;
+}
+
+#accessMessage {
+    margin-top: 15px;
+    font-weight: bold;
+}

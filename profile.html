@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odisika Importation - Learn & Grow</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/profile.css">
+    <link rel="stylesheet" href="styles/auth.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+</head>
+<body>
+
+  <!-- 🌟 Navbar -->
+<nav class="navbar">
+    <div class="logo">Odisika Importation</div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="enroll.html">Enroll</a></li>
+        <li id="authNav">
+            <a href="login.html" id="authLink">
+                <span id="authText">🔑 Login</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<!-- 🌟 Profile Modal (Hidden Initially) -->
+<div id="profileModal" class="modal hidden">
+    <div class="modal-content">
+        <span class="close-btn" id="closeProfile">&times;</span>
+        <h2>👤 User Profile</h2>
+        <p><strong>Name:</strong> <span id="userName">Guest</span></p>
+        <p><strong>Email:</strong> <span id="userEmail">Not Logged In</span></p>
+        <p><strong>Status:</strong> <span id="userStatus">🔒 Not Enrolled</span></p>
+        <h3>📚 Enrolled Courses</h3>
+        <ul id="courseList"></ul>
+        <h3>⚙️ Settings</h3>
+        <button id="editProfile">✏️ Edit Profile</button>
+        <button id="resetPassword">🔑 Reset Password</button>
+        <button id="logout" class="logout-btn">🚪 Logout</button>
+    </div>
+</div>
+
+
+
+
+    <!-- 🎯 Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Upgrade Your Skills</h1>
+            <p>Enroll in top courses and advance your career.</p>
+            <a href="courses.html" class="btn">Explore Courses</a>
+        </div>
+    </header>
+
+    <!-- 🚀 Features Section -->
+    <section class="features">
+        <h2>Why Choose EduTrain?</h2>
+        <div class="features-grid">
+            <div class="feature">
+                <img src="assets/icons/GIFT.png" alt="Certificate">
+                <h3>Certified Courses</h3>
+                <p>Get industry-recognized certificates after completing your courses.</p>
+            </div>
+            <div class="feature">
+                <img src="assets/icons/PERF7.png" alt="Expert">
+                <h3>Expert Instructors</h3>
+                <p>Learn from professionals with real-world experience.</p>
+            </div>
+            <div class="feature">
+                <img src="assets/icons/real - es logo.png" alt="Online">
+                <h3>100% Online</h3>
+                <p>Study from anywhere at your own pace with flexible schedules.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 📚 Popular Courses -->
+    <section class="courses">
+        <h2>Popular Courses</h2>
+        <div class="course-grid">
+            <div class="course-card">
+                <img src="assets/images/Alibaba.jpg" alt="Course 1">
+                <h3>Web Development</h3>
+                <p>Master HTML, CSS, JavaScript, and build real-world projects.</p>
+                <a href="enroll.html" class="btn">Enroll Now</a>
+            </div>
+            <div class="course-card">
+                <img src="assets/images/pinduoduo.jpg" alt="Course 2">
+                <h3>Python for Beginners</h3>
+                <p>Learn Python programming from scratch with hands-on exercises.</p>
+                <a href="enroll.html" class="btn">Enroll Now</a>
+            </div>
+            <div class="course-card">
+                <img src="assets/images/1688.jpg" alt="Course 3">
+                <h3>Digital Marketing</h3>
+                <p>Become a marketing pro with SEO, PPC, and social media strategies.</p>
+                <a href="enroll.html" class="btn">Enroll Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 💬 Testimonials -->
+    <section class="testimonials">
+        <h2>What Our Students Say</h2>
+        <div class="testimonial-container">
+            <div class="testimonial">
+                <p>"EduTrain transformed my career! The web development course was amazing."</p>
+                <h4>- Sarah M.</h4>
+            </div>
+            <div class="testimonial">
+                <p>"Highly recommend! The instructors are knowledgeable and engaging."</p>
+                <h4>- David A.</h4>
+            </div>
+            <div class="testimonial">
+                <p>"I got certified and landed a job in just 3 months. Best decision ever!"</p>
+                <h4>- Jessica R.</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🚀 Call to Action -->
+    <section class="cta">
+        <h2>Start Learning Today</h2>
+        <p>Join thousands of students and take your skills to the next level.</p>
+        <a href="enroll.html" class="btn">Enroll Now</a>
+    </section>
+
+    <!-- ⚡ Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Odisika Importation. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+  <!-- ✅ Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore-compat.js"></script>
+
+  <!-- ✅ Firebase Config -->
+  <script src="firebase-config.js"></script>
+
+  <!-- ✅ JavaScript -->
+  <script src="scripts/profile.js"></script>
+
+</body>
+</html>

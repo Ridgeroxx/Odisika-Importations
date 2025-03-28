@@ -1,0 +1,36 @@
+/* 🌟 Course Content Styling */
+.course-content {
+    max-width: 800px;
+    margin: 80px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.course-content h2 {
+    text-align: center;
+    color: #007bff;
+}
+
+.course-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.course-content ul li {
+    background: #f8f9fa;
+    margin: 10px 0;
+    padding: 10px;
+    border-left: 5px solid #007bff;
+    font-weight: bold;
+}
+
+.course-content ul li a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.course-content ul li a:hover {
+    text-decoration: underline;
+}

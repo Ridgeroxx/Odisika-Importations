@@ -1,0 +1,84 @@
+/* 🌟 Glassmorphic Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;  /* ✅ Ensures items are evenly spaced */
+    align-items: center;
+    padding: auto;  /* ✅ More padding for better spacing */
+    z-index: 1000;  /* ✅ Ensures navbar is on top */
+}
+
+/* ✅ Ensures logo stays on the left */
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+    flex-shrink: 0; /* Prevents shrinking */
+}
+
+/* ✅ Properly aligns navbar items */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    margin: 20px; /* Push links to the right */
+}
+
+/* ✅ Styles for navbar links */
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: 0.3s ease-in-out;
+}
+
+/* ✅ Hover effect */
+.nav-links li a:hover {
+    color: #007bff;
+}
+
+/* ✅ Mobile menu toggle */
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* ✅ RESPONSIVE NAVBAR */
+@media (max-width: 900px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: rgba(0, 0, 0, 0.7);
+        padding: 15px;
+        border-radius: 8px;
+        width: 200px;
+        text-align: center;
+        margin: 20px; /* Push links to the right */
+    }
+
+    /* ✅ Show menu when active */
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}

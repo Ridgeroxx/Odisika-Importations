@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odisika Importation - Courses</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/courses.css">
+</head>
+<body>
+
+    <!-- 🌟 Navbar -->
+    <nav class="navbar">
+        <div class="logo">Odisika Importation</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="enroll.html">Enroll</a></li>
+        </ul>
+        <button class="menu-toggle">☰</button>
+    </nav>
+
+    
+
+    <!-- 📚 Courses Section -->
+    <section class="courses">
+        <h2>Our Top Courses</h2>
+        <p>Browse through our expert-led courses and upgrade your skills.</p>
+        <div class="course-grid">
+            
+            <!-- Course Card 1 -->
+            <div class="course-card">
+                <img src="assets/images/Alibaba.jpg" alt="Web Development">
+                <h3>Web Development</h3>
+                <p>Master HTML, CSS, and JavaScript to build stunning websites.</p>
+                <span class="price">$49.99</span>
+                <a href="enroll.html?course=web-development" class="btn">Enroll Now</a>
+            </div>
+
+            <!-- Course Card 2 -->
+            <div class="course-card">
+                <img src="assets/images/1688.jpg" alt="Python Programming">
+                <h3>Python for Beginners</h3>
+                <p>Learn Python programming from scratch with hands-on projects.</p>
+                <span class="price">$59.99</span>
+                <a href="enroll.html?course=python" class="btn">Enroll Now</a>
+            </div>
+
+            <!-- Course Card 3 -->
+            <div class="course-card">
+                <img src="assets/images/pinduoduo.jpg" alt="Digital Marketing">
+                <h3>Digital Marketing</h3>
+                <p>Master SEO, PPC, and social media marketing strategies.</p>
+                <span class="price">$39.99</span>
+                <a href="enroll.html?course=digital-marketing" class="btn">Enroll Now</a>
+            </div>
+
+            <!-- Course Card 4 -->
+            <div class="course-card">
+                <img src="assets/images/1688.jpg" alt="Graphic Design">
+                <h3>Graphic Design</h3>
+                <p>Learn Adobe Photoshop & Illustrator to create stunning visuals.</p>
+                <span class="price">$45.99</span>
+                <a href="enroll.html?course=graphic-design" class="btn">Enroll Now</a>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- ⚡ Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Odisika Importation. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- ✅ Load Firebase SDKs (UMD Version - Works Globally) -->
+<script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore-compat.js"></script>
+
+<!-- ✅ Load Firebase Config -->
+<script src="firebase-config.js"></script>
+
+<!-- ✅ Now Load Your JavaScript -->
+<script src="scripts/navbar.js"></script>
+</body>
+</html>

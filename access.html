@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odisika Importation - Access Course</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/access.css">
+</head>
+<body>
+
+    <!-- 🌟 Navbar -->
+    <nav class="navbar">
+        <div class="logo">Odisika Importation</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="#" onclick="logout()">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- 🔓 Access Code Section -->
+    <section class="access-container">
+        <h2>🔓 Enter Your Access Code</h2>
+        <p>Enter the access code sent to your email to unlock your course.</p>
+        
+        <input type="text" id="accessCode" placeholder="Enter Access Code" required>
+        <button onclick="verifyAccessCode()">Unlock Course</button>
+
+        <p id="accessMessage"></p>
+    </section>
+
+    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore-compat.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="scripts/access.js"></script>
+
+</body>
+</html>

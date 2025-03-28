@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Content</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/course.css">
+</head>
+<body>
+
+    <!-- 🌟 Navbar -->
+    <nav class="navbar">
+        <div class="logo">Odisika Importation</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#" onclick="logout()">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- 📚 Course Content Section -->
+    <section class="course-content">
+        <h2 id="courseTitle">Loading Course...</h2>
+        <p id="courseDescription"></p>
+
+        <div id="lessons">
+            <h3>Lessons</h3>
+            <ul id="lessonList">
+                <!-- Lessons will be loaded here -->
+            </ul>
+        </div>
+
+        <div id="resources">
+            <h3>Resources</h3>
+            <ul id="resourceList">
+                <!-- Course resources (PDFs, videos) will be loaded here -->
+            </ul>
+        </div>
+    </section>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js"></script>
+
+    <script src="firebase-config.js"></script>
+    <script src="scripts/course.js"></script>
+</body>
+</html>

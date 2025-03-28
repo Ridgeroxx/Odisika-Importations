@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Your Course</title>
+    <link rel="stylesheet" href="styles/access-course.css"> <!-- ✅ Link your CSS -->
+</head>
+<body>
+    <!-- 🌟 Navbar -->
+    <nav class="navbar">
+        <div class="logo">Odisika Importation</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="enroll.html">Enroll</a></li>
+            <li><a href="access-course.html" class="active">📚 Access Your Course</a></li>
+        </ul>
+    </nav>
+
+    <!-- 🌟 Access Course Section -->
+    <div class="container">
+        <h2>🔑 Enter Your Access Code</h2>
+        <p>Enter the code you received to unlock your course.</p>
+        
+        <input type="text" id="accessCodeInput" placeholder="Enter Access Code">
+        <button id="verifyAccessBtn">✅ Verify</button>
+        
+        <p id="accessMessage" class="message"></p>
+        <div class="loader" id="loadingSpinner"></div>
+
+    </div>
+
+    <!-- ✅ Load Firebase SDKs (UMD Version - Works Globally) -->
+    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore-compat.js"></script>
+
+    <!-- ✅ JavaScript File -->
+    <script src="scripts/access-course.js"></script>
+</body>
+</html>

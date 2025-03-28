@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odisika Importation - Enroll Now</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/enroll.css">
+</head>
+<body>
+
+    <!-- 🌟 Navbar -->
+    <nav class="navbar">
+        <div class="logo">Odisika Importation</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="enroll.html">Enroll</a></li>
+        </ul>
+        <button class="menu-toggle">☰</button>
+    </nav>
+
+    <!-- 📝 Enrollment Form -->
+    <section class="enrollment">
+        <h2>Enroll in a Course</h2>
+        <form id="enrollForm">
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" required>
+
+            <label for="course">Select Course:</label>
+            <select id="course" required>
+                <option value="pinduoduo" data-price="500">Pinduoduo - 500 Cedis</option>
+                <option value="1688" data-price="1000">1688 - 1000 Cedis</option>
+                <option value="alibaba" data-price="350">Alibaba - 350 Cedis</option>
+            </select>
+
+            <label for="mode">Select Mode:</label>
+            <select id="mode" required>
+                <option value="online">Online</option>
+                <option value="in-person">In-Person</option>
+            </select>
+
+            <h3>Total Price: <span id="priceDisplay">500 Cedis</span></h3>
+
+            <!-- 💳 Paystack Payment Button -->
+            <button type="button" id="payBtn">Proceed to Payment</button>
+        </form>
+    </section>
+
+    <!-- ⚡ Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Odisika Importation. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- 🔥 Firebase SDK (Use CDN Versions Instead of Modules) -->
+<script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore-compat.js"></script>
+
+<!-- ✅ Firebase Configuration (Must Load AFTER SDK) -->
+<script src="firebase-config.js"></script>
+
+<!-- 💳 Paystack SDK -->
+<script src="https://js.paystack.co/v1/inline.js"></script>
+
+<!-- 📜 Enroll JavaScript (Loads Last) -->
+<script src="scripts/enroll.js"></script>
+
+
+
+</body>
+</html>
