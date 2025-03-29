@@ -3,12 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#007bff">
+    <meta name="apple-mobile-web-app-capable" content="yes">    
+    
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <!-- 🌍 Basic Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Odi Imports - Best online learning platform">
+    <meta name="keywords" content="Odi Imports, online courses, learning, education">
+    <meta name="author" content="Ridge roxx">
+
+    <!-- 📱 Mobile Optimization -->
+    <meta name="theme-color" content="#007bff">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- 📢 Social Media Meta (Open Graph for Facebook) -->
+    <meta property="og:title" content="Odi Imports - Learn Online">
+    <meta property="og:description" content="Join thousands of learners on Odi Imports">
+    <meta property="og:image" content="https://yourwebsite.com/assets/images/logo.png">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:type" content="website">
+
+    <!-- 🐦 Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Odi Imports - Learn Online">
+    <meta name="twitter:description" content="Best online courses for you">
+    <meta name="twitter:image" content="https://yourwebsite.com/assets/images/logo.png">
+
     <title>Odisika Importation - Learn & Grow</title>
-    <link rel="stylesheet" href="public/styles/main.css">
+    <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/components.css">
     <link rel="stylesheet" href="styles/profile.css">
     <link rel="stylesheet" href="styles/auth.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
 </head>
 <body>
@@ -16,6 +46,8 @@
  <!-- 🌟 Navbar -->
 <nav class="navbar">
     <div class="logo">Odisika</div>
+    <!-- 📱 Mobile Menu Button -->
+    <button class="menu-toggle">☰</button>
     <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="courses.html">Courses</a></li>
@@ -71,9 +103,6 @@
         <button id="logout" class="logout-btn">🚪 Logout</button>
     </div>
 </div>
-
-
-
 
     <!-- 🎯 Hero Section -->
     <header class="hero">
@@ -158,16 +187,55 @@
     </section>
 
     <!-- ⚡ Footer -->
-    <footer class="footer">
-        <div class="footer-content">
+      <footer class="footer">
+        <div class="footer-container">
+
+
+        <!-- 🌍 Logo & Quick Links -->
+        <div class="footer-section footer-logo-links">
+            <div class="footer-logo">
+                <img src="assets/images/logo.png" alt="Odisika Importation Logo">
+            </div>
+            <ul class="quick-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="access-course.html">Access Course</a></li>
+                <li><a href="enroll.html">Enroll</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </div>
+
+        <!-- 📜 Legal & Contact Info -->
+        <div class="footer-section footer-legal">
             <p>&copy; 2025 Odisika Importation. All rights reserved.</p>
-            <ul class="footer-links">
+            <ul class="legal-links">
                 <li><a href="#">Privacy Policy</a></li>
                 <li><a href="#">Terms of Service</a></li>
                 <li><a href="#">Contact Us</a></li>
             </ul>
+            <p>Call: <a href="tel:+233209707452">0209707452</a></p>
         </div>
-    </footer>
+
+        <!-- 📱 Social Media -->
+        <div class="footer-section footer-social">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <a href="https://tiktok.com" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://whatsapp.com" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+     </div>
+
+    <!-- 🎨 Footer Bottom -->
+    <div class="footer-bottom">
+        <p>Designed by <strong>Ridge_roxx Team</strong></p>
+    </div>
+</footer>
+
 
     <!-- ✅ Load Firebase SDKs (UMD Version - Works Globally) -->
     <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app-compat.js"></script>
@@ -237,8 +305,29 @@
                 }
             });
         });
-        </script>
-        
 
+        const darkModeToggle = document.getElementById("darkModeToggle");
+const body = document.body;
+
+// ✅ Check Local Storage for Dark Mode Preference
+if (localStorage.getItem("darkMode") === "enabled") {
+    body.classList.add("dark-mode");
+    darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>'; // Change to sun ☀️
+}
+
+// ✅ Toggle Dark Mode
+darkModeToggle.addEventListener("click", () => {
+    body.classList.toggle("dark-mode");
+
+    if (body.classList.contains("dark-mode")) {
+        darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>'; // Sun Icon in Dark Mode
+        localStorage.setItem("darkMode", "enabled"); // Save preference
+    } else {
+        darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>'; // Moon Icon in Light Mode
+        localStorage.setItem("darkMode", "disabled"); // Save preference
+    }
+});
+
+        </script>
 </body>
 </html>

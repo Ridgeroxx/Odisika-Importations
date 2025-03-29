@@ -1,102 +1,113 @@
-/* 🌟 General Styles */
+/* 🌟 Global Styles */
 body {
-    margin: 0;
     font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    line-height: 1.6;
     background: #f5f5f5;
     color: #333;
-    text-align: center;
-    background-attachment: fixed;
 }
 
-/* 🎯 Sections */
-section {
-    padding: 60px 20px;
+/* ✅ Responsive Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
 }
 
-h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+/* ✅ Responsive Images */
+img {
+    max-width: 100%;
+    height: auto;
 }
 
-/* 🚀 Features */
-.features-grid {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-}
-
-.feature {
-    width: 300px;
-    text-align: center;
-}
-
-.feature img {
-    width: 60px;
-}
-
-/* 📚 Courses */
-.course-grid {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.course-card {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    width: 250px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.course-card img {
+/* ==============================
+   🌟 NAVBAR (Glassmorphic)
+   ============================== */
+.navbar {
+    position: fixed;
+    top: 0;
     width: 100%;
-    border-radius: 8px;
-}
-
-/* 💬 Testimonials */
-.testimonial-container {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
     display: flex;
-    justify-content: center;
-    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    z-index: 1000;
 }
 
-.testimonial {
-    width: 250px;
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* 🚀 Call to Action */
-.cta {
-    background: #007bff;
+/* ✅ Navbar Logo */
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
     color: white;
-    padding: 40px 20px;
 }
 
-.cta .btn {
-    background: white;
+/* ✅ Navbar Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* ✅ Navbar Link Styles */
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: 0.3s ease-in-out;
+    padding: 10px 15px;
+}
+
+/* ✅ Hover Effect */
+.nav-links a:hover {
     color: #007bff;
 }
 
-/* ⚡ Footer */
-.footer {
-    background: #333;
+/* ✅ Mobile Menu Button */
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    background: none;
+    border: none;
     color: white;
-    padding: 20px;
+    cursor: pointer;
 }
 
-.footer-links {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+/* ✅ Responsive Navbar */
+@media (max-width: 900px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: rgba(0, 0, 0, 0.9);
+        padding: 15px;
+        border-radius: 8px;
+        width: 200px;
+        text-align: center;
+    }
+
+    /* ✅ Show Menu When Active */
+    .nav-links.show {
+        display: flex;
+    }
 }
 
-
-/* 🎯 Hero Section */
+/* ==============================
+   🌟 HERO SECTION (Landing Page)
+   ============================== */
 .hero {
     background: url('../assets/images/odi.jpg') center/cover no-repeat;
     height: 90vh;
@@ -118,22 +129,454 @@ h2 {
     margin-bottom: 20px;
 }
 
-.btn {
-    display: inline-block;
-    padding: 12px 24px;
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+
+/* ✅ Adjust for Small Screens */
+@media (max-width: 768px) {
+    .hero {
+        height: 70vh;
+        padding: 20px;
+        background-attachment: scroll;
+    }
+}
+
+/* ==============================
+   🌟 SECTIONS (Layout)
+   ============================== */
+   .section {
+    padding: 80px 20px; /* Increased padding for better spacing */
+    text-align: center;
+}
+
+
+
+/* ✅ Flexible Grid Layout */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px; /* Increased gap for better spacing */
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ==============================
+   🌟 FEATURES & COURSES SECTION
+   ============================== */
+.features-grid,
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+/* ✅ Feature & Course Cards */
+.feature,
+.course-card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: 0.3s ease-in-out;
+}
+
+/* ✅ Smooth Hover Effect */
+.feature:hover,
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ✅ Icons inside feature cards */
+.feature i,
+.course-card i {
+    font-size: 2rem;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+/* ✅ Feature & Course Title */
+.feature h3,
+.course-card h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* ✅ Feature & Course Description */
+.feature p,
+.course-card p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+.course-card:hover, .feature:hover {
+    transform: scale(1.05);
+    transition: 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background: #0056b3;
+    transform: translateY(-3px);
+}
+
+
+/* ==============================
+   🌟 Features Section - Fix Alignment
+   ============================== */
+   .features {
+    text-align: center;  /* ✅ Ensures all text inside is centered */
+    padding: 60px 20px;
+}
+
+/* ✅ Ensure <h2> is Centered */
+.features h2 {
+    text-align: center;  /* ✅ Forces the heading to align center */
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+
+/* ==============================
+   🌟 RESPONSIVENESS
+   ============================== */
+@media (max-width: 768px) {
+    .section {
+        padding: 60px 15px;
+    }
+
+    .features-grid,
+    .course-grid {
+        grid-template-columns: 1fr; /* ✅ Single column on small screens */
+        padding: 20px;
+    }
+
+    .feature,
+    .course-card {
+        width: 100%; /* ✅ Full width on small screens */
+    }
+}
+
+
+/* ==============================
+   🌟 TESTIMONIALS SECTION
+   ============================== */
+   .testimonial-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ✅ Testimonial Card */
+.testimonial {
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease-in-out;
+}
+
+/* ✅ Smooth Hover Effect */
+.testimonial:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ✅ Testimonial Image */
+.testimonial img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+/* ✅ Testimonial Text */
+.testimonial p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+/* ✅ Testimonial Author */
+.testimonial h4 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* ==============================
+   🌟 RESPONSIVENESS
+   ============================== */
+@media (max-width: 768px) {
+    .testimonial-container {
+        grid-template-columns: 1fr; /* ✅ Single column for mobile */
+        padding: 20px;
+    }
+}
+
+
+/* ==============================
+   🌟 CALL TO ACTION (CTA)
+   ============================== */
+.cta {
     background: #007bff;
     color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* ==============================
+   🌟 Popular Courses & Testimonials - Fix Alignment
+   ============================== */
+   .courses, .testimonials {
+    text-align: center;  /* ✅ Ensures all text inside is centered */
+    padding: 60px 20px;
+}
+
+/* ✅ Ensure <h2> is Centered */
+.courses h2, 
+.testimonials h2 {
+    text-align: center;  /* ✅ Forces the heading to align center */
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+
+.cta .btn {
+    background: white;
+    color: #007bff;
+}
+
+/* 🌟 Footer Base Styling */
+.footer {
+    background: #222;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* 🔥 Logo & Quick Links */
+.footer-logo img {
+    width: 120px;
+    margin-bottom: 10px;
+}
+
+.quick-links {
+    list-style: none;
+    padding: 0;
+}
+
+.quick-links li {
+    margin: 5px 0;
+}
+
+.quick-links a {
     text-decoration: none;
-    font-size: 1.2rem;
-    border-radius: 5px;
+    color: white;
     transition: 0.3s;
+}
+
+.quick-links a:hover {
+    color: #ffcc00;
+}
+
+/* 🔥 Legal Links & Contact */
+.footer-legal {
+    font-size: 14px;
+}
+
+.legal-links {
+    list-style: none;
+    padding: 0;
+}
+
+.legal-links li {
+    margin: 5px 0;
+}
+
+.legal-links a {
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.legal-links a:hover {
+    color: #ffcc00;
+}
+
+/* 🔥 Social Media Icons */
+.footer-social {
+    text-align: center;
+}
+
+.footer-social h3 {
+    margin-bottom: 10px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ffcc00;
+}
+
+/* 🔥 Footer Bottom */
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 10px;
+}
+
+/* 🔥 Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+
+/* ==============================
+   🌟 Footer Styling - Fix Alignment
+   ============================== */
+   .footer {
+    background: #333;
+    color: white;
+    padding: 30px 20px;
+    text-align: center; /* ✅ Ensures everything inside is centered */
+}
+
+.footer-content {
+    margin-bottom: 20px;
+}
+
+.footer-content p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+/* ✅ Center Align Footer Links */
+.footer-links {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* ✅ Center links horizontally */
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    display: inline;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: 0.3s ease-in-out;
+}
+
+.footer-links a:hover {
+    color: #007bff;
+}
+
+
+/* ==============================
+   🌟 SCROLL TO TOP BUTTON
+   ============================== */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #007bff;
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.scroll-to-top:hover {
+    background: #0056b3;
+}
+
+
+/* ==============================
+   🌟 BUTTONS & INTERACTIVE ELEMENTS
+   ============================== */
+button, .btn {
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: 0.3s;
+    background: #007bff;
+    color: white;
+    border: none;
 }
 
 .btn:hover {
     background: #0056b3;
 }
 
-/* 🌟 Profile Dropdown Styling */
+/* ==============================
+   🌟 PROFILE DROPDOWN MENU
+   ============================== */
 .profile-menu {
     position: relative;
     display: inline-block;
@@ -173,86 +616,14 @@ h2 {
     border-radius: 5px;
 }
 
-/* Show Dropdown on Click */
+/* ✅ Show Dropdown on Click */
 .profile-menu .dropdown.show {
     display: block;
 }
 
-#authNav {
-    display: block !important; /* 🔥 Ensure it shows up */
-}
-
-/* ✅ Restore Custom Navbar Styling */
-.navbar {
-    background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(10px);
-    padding: 15px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-}
-.navbar a {
-    color: white;
-    text-decoration: none;
-    margin-right: 20px;
-}
-
-
-.navbar .nav-links {
-    list-style: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    display: flex !important;
-    gap: 15px !important;
-}
-
-.navbar .nav-links li {
-    display: inline !important;
-}
-
-.navbar .nav-links a {
-    color: white !important;
-    text-decoration: none !important;
-    font-size: 16px !important;
-    font-weight: bold !important;
-    padding: 10px 15px !important;
-}
-
-.navbar .nav-links a:hover {
-    background: rgba(255, 255, 255, 0.2) !important;
-    border-radius: 5px !important;
-}
-
-/* ✅ Ensure Navbar is Always on Top */
-.navbar-fixed {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    z-index: 1050 !important;
-}
-
-/* ✅ Fix Bootstrap Button Issues */
-button, .btn {
-    font-size: 16px !important;
-    font-weight: bold !important;
-    border-radius: 5px !important;
-}
-
-/* ✅ Fix Bootstrap Sidebar Width */
-.offcanvas {
-    width: 280px !important;
-    background: rgba(255, 255, 255, 0.9) !important;
-}
-
-/* 🔥 Modal Styling */
-.modal { display: none; position: fixed; z-index: 1000; left: 50%; top: 50%;
-    transform: translate(-50%, -50%); background: white; padding: 20px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5); text-align: center; }
-  .modal-content { padding: 20px; }
-  .close-btn { cursor: pointer; font-size: 20px; float: right; }
-  
-  /* 🔄 Hidden by Default */
+/* ==============================
+   🌟 LOADING SCREEN (SPINNER)
+   ============================== */
 #loadingScreen {
     display: none;
     position: fixed;
@@ -270,7 +641,6 @@ button, .btn {
     z-index: 9999;
 }
 
-/* 🔄 Loading Spinner */
 .loading-spinner {
     width: 50px;
     height: 50px;
@@ -285,5 +655,73 @@ button, .btn {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+/* ==============================
+   🌟 MEDIA QUERIES (Responsive Design)
+   ============================== */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
 
-  
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+
+    .features-grid,
+    .course-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature,
+    .course-card {
+        width: 90%;
+        margin: 10px 0;
+    }   
+}
+
+/* 🎛 Dark Mode Toggle */
+.dark-mode-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    position: fixed;  /* Fix position to always be visible */
+    top: 15px;
+    right: 20px;
+    z-index: 1000;
+}
+
+/* 🌙 Dark Mode Styles */
+.dark-mode {
+    background-color: #222;
+    color: white;
+}
+
+/* 🔥 Toggle Button in Dark Mode */
+.dark-mode .dark-mode-toggle {
+    color: white;
+}
+
+/* 🔥 Change Button Icon in Dark Mode */
+.dark-mode .dark-mode-toggle i {
+    content: "\f185"; /* Font Awesome Sun Icon */
+}
+.dark-mode .dark-mode-toggle:hover {
+    color: #ffcc00;
+}   
+
+
+/* ==============================
+   🌟 END OF STYLES
+   ============================== */
+/* Add any additional styles below this comment */  
+
+/* ==============================
+   🌟 CUSTOM STYLES (Optional)
+   ============================== */
+/* Add your custom styles here if needed */ 
+

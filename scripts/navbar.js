@@ -49,8 +49,25 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // ✅ Close Modal When Clicking ❌ Button or Outside
-document.getElementById("closeProfile").addEventListener("click", toggleProfile);
-profileOverlay.addEventListener("click", toggleProfile);
+  document.getElementById("closeProfile").addEventListener("click", toggleProfile);
+  profileOverlay.addEventListener("click", toggleProfile);
+
+  // 🌐 Mobile Navbar Toggle
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+// Toggle menu on click
+menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+});
+
+// Close menu when clicking outside
+document.addEventListener("click", (event) => {
+    if (!menuToggle.contains(event.target) && !navLinks.contains(event.target)) {
+        navLinks.classList.remove("show");
+    }
+});
+
 
     // ✅ Check Authentication & Update Navbar
     auth.onAuthStateChanged((user) => {
@@ -163,4 +180,6 @@ profileOverlay.addEventListener("click", toggleProfile);
                 .catch(error => alert("❌ Error updating profile: " + error.message));
         });
     }
+
+    
 });
