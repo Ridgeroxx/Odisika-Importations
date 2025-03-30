@@ -1,15 +1,13 @@
 <?php
 // ✅ Clear Output Buffer to Prevent Extra Characters
 ob_clean();
-header("Access-Control-Allow-Origin: *"); // 🔥 Allows frontend access
-header("Content-Type: application/json"); // ✅ Ensures JSON response
-header("Access-Control-Allow-Methods: POST, OPTIONS");
+header("Access-Control-Allow-Origin: https://ridgeroxx.github.io"); // Allow GitHub Pages
+header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, Authorization");
 
 // ✅ Enable Error Reporting for Debugging
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-
 
 // ✅ Handle Preflight Request for CORS
 if ($_SERVER["REQUEST_METHOD"] === "OPTIONS") {
@@ -17,14 +15,16 @@ if ($_SERVER["REQUEST_METHOD"] === "OPTIONS") {
     exit;
 }
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
+// ✅ Require Composer Autoloader for PHPMailer & Dotenv
 require 'vendor/autoload.php';
 
-// ✅ Enable error reporting for debugging
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+use Dotenv\Dotenv;
+
+// ✅ Load .env file for sensitive credentials
+$dotenv = Dotenv::createImmutable(__DIR__);
+$dotenv->load();
 
 // ✅ Ensure the script only runs on POST requests
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
@@ -60,20 +60,6 @@ if (!$email || !$course || !$accessCode || !$reference) {
 $mail = new PHPMailer(true);
 
 try {
-    // ✅ Load dotenv to access environment variables
-require 'vendor/autoload.php';
-
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
-// ✅ Load .env file
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->load();
-
-// ✅ Initialize PHPMailer
-$mail = new PHPMailer(true);
-
-try {
     // ✅ Setup Gmail SMTP Securely
     $mail->isSMTP();
     $mail->Host       = $_ENV['GMAIL_HOST'];
@@ -82,15 +68,11 @@ try {
     $mail->Password   = $_ENV['GMAIL_PASSWORD'];
     $mail->SMTPSecure = $_ENV['GMAIL_ENCRYPTION'];
     $mail->Port       = $_ENV['GMAIL_PORT'];
-    $mail->SMTPDebug  = 2; // Set to 2 for debugging, 0 for production
+    $mail->SMTPDebug  = 0; // Set to 2 for debugging, 0 for production
 
     // ✅ Email Settings
     $mail->setFrom($_ENV['GMAIL_USERNAME'], 'Odisika Importation');
     $mail->addAddress($email); // Recipient
-
-    // ✅ Email Settings
-    $mail->setFrom('nanabk442@gmail.com', 'Odisika Importation');  // Sender
-    $mail->addAddress($email);  // Recipient
 
     // ✅ Email Content (HTML)
     $mail->isHTML(true);
