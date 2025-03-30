@@ -126,7 +126,7 @@ async function storeEnrollment(name, email, phone, course, mode, transactionId, 
             if (data.success) {
                 alert("✅ Payment confirmed! Check your email for access code.");
                 setTimeout(() => {
-                    window.location.href = `access.html?email=${email}`;
+                    window.location.href = `access-course.html?email=${email}`;
                 }, 3000);
             } else {
                 alert("❌ Email failed: " + data.message);

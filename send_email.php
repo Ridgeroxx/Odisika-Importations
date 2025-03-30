@@ -1,7 +1,25 @@
 <?php
 // ✅ Clear Output Buffer to Prevent Extra Characters
 ob_clean();
-header("Access-Control-Allow-Origin: https://ridgeroxx.github.io"); // Allow GitHub Pages
+
+
+// Define allowed origins
+$allowed_origins = [
+    "http://127.0.0.1:5500", // Local development
+    "https://ridgeroxx.github.io" // GitHub Pages
+];
+
+// Check if the request origin is allowed
+if (isset($_SERVER['HTTP_ORIGIN']) && in_array($_SERVER['HTTP_ORIGIN'], $allowed_origins)) {
+    header("Access-Control-Allow-Origin: " . $_SERVER['HTTP_ORIGIN']);
+} else {
+    header("Access-Control-Allow-Origin: https://ridgeroxx.github.io"); // Default to production
+}
+
+// ✅ Set Content-Type Header for JSON Response
+header("Content-Type: application/json");
+header("Access-Control-Allow-Credentials: true");
+header("Access-Control-Allow-Origin: *"); // Allow all origins for testing
 header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, Authorization");
 

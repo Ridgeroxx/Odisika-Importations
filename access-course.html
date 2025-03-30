@@ -15,6 +15,7 @@
             <li><a href="courses.html">Courses</a></li>
             <li><a href="enroll.html">Enroll</a></li>
             <li><a href="access-course.html" class="active">📚 Access Your Course</a></li>
+            <li><a href="#" onclick="logout()">🚪 Logout</a></li>
         </ul>
     </nav>
 
@@ -27,14 +28,16 @@
         <button id="verifyAccessBtn">✅ Verify</button>
         
         <p id="accessMessage" class="message"></p>
-        <div class="loader" id="loadingSpinner"></div>
-
+        <div class="loader" id="loadingSpinner" style="display: none;"></div>
     </div>
 
-    <!-- ✅ Load Firebase SDKs (UMD Version - Works Globally) -->
+    <!-- ✅ Load Firebase SDKs -->
     <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore-compat.js"></script>
+
+    <!-- ✅ Firebase Config -->
+    <script src="firebase-config.js"></script>
 
     <!-- ✅ JavaScript File -->
     <script src="scripts/access-course.js"></script>
