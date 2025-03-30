@@ -680,39 +680,31 @@ button, .btn {
         margin: 10px 0;
     }   
 }
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
-/* 🎛 Dark Mode Toggle */
-.dark-mode-toggle {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
-    position: fixed;  /* Fix position to always be visible */
-    top: 15px;
-    right: 20px;
-    z-index: 1000;
-}
+    .nav-links {
+        position: static;
+        background: none;
+        padding: 0;
+        gap: 10px;
+    }
 
-/* 🌙 Dark Mode Styles */
-.dark-mode {
-    background-color: #222;
-    color: white;
-}
+    .nav-links.show {
+        display: flex;
+    }
 
-/* 🔥 Toggle Button in Dark Mode */
-.dark-mode .dark-mode-toggle {
-    color: white;
-}
+    .hero-content h1 {
+        font-size: 2rem;
+    }
 
-/* 🔥 Change Button Icon in Dark Mode */
-.dark-mode .dark-mode-toggle i {
-    content: "\f185"; /* Font Awesome Sun Icon */
+    .hero-content p {
+        font-size: 0.9rem;
+    }
 }
-.dark-mode .dark-mode-toggle:hover {
-    color: #ffcc00;
-}   
 
 
 /* ==============================

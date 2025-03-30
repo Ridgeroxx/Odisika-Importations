@@ -60,15 +60,33 @@ if (!$email || !$course || !$accessCode || !$reference) {
 $mail = new PHPMailer(true);
 
 try {
-    // ✅ Setup Gmail SMTP
+    // ✅ Load dotenv to access environment variables
+require 'vendor/autoload.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+// ✅ Load .env file
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+// ✅ Initialize PHPMailer
+$mail = new PHPMailer(true);
+
+try {
+    // ✅ Setup Gmail SMTP Securely
     $mail->isSMTP();
-    $mail->Host       = 'smtp.gmail.com';
+    $mail->Host       = $_ENV['GMAIL_HOST'];
     $mail->SMTPAuth   = true;
-    $mail->Username   = 'nanabk442@gmail.com';  // ✅ Your Gmail Address
-    $mail->Password   = 'qqoh rfhm hqsr ohvb';  // ✅ Your Gmail App Password (Not your normal password)
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-    $mail->Port       = 587;
-    $mail->SMTPDebug  = 2; // ✅ Enables Debugging (0 = Off, 1 = Commands, 2 = Full)
+    $mail->Username   = $_ENV['GMAIL_USERNAME'];
+    $mail->Password   = $_ENV['GMAIL_PASSWORD'];
+    $mail->SMTPSecure = $_ENV['GMAIL_ENCRYPTION'];
+    $mail->Port       = $_ENV['GMAIL_PORT'];
+    $mail->SMTPDebug  = 2; // Set to 2 for debugging, 0 for production
+
+    // ✅ Email Settings
+    $mail->setFrom($_ENV['GMAIL_USERNAME'], 'Odisika Importation');
+    $mail->addAddress($email); // Recipient
 
     // ✅ Email Settings
     $mail->setFrom('nanabk442@gmail.com', 'Odisika Importation');  // Sender
